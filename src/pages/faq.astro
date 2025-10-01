@@ -1,0 +1,28 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="../images/key-kings-logo.jpeg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <title>FAQs | Key Kings Locksmith</title>
+  </head>
+  <body class="font-poppins">
+    <Header />
+    
+    <main class="pt-20">
+      <h1>About Locksmith Key Kings</h1>
+      <p>We provide professional locksmith services in your area.</p>
+    </main>
+
+    <Footer />
+
+  </body>
+</html>

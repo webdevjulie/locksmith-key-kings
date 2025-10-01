@@ -1,0 +1,219 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { faq } from '../data/faq.js';
+import { about } from '../data/about.js';
+import { reviews } from '../data/reviews.js';
+const { trust } = about;
+const { cta } = about;
+import '../styles/global.css';
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="../images/key-kings-logo.jpeg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <title>Contact | Key Kings Locksmith</title>
+  </head>
+  <body class="font-poppins">
+    <Header />
+    
+    <main class="pt-20">
+     <!-- FAQs Section -->
+      <section class="relative bg-[rgba(249,237,237,1)] text-brand-dark py-20 md:py-28">
+        <div class="max-w-6xl mx-auto px-6">
+
+          <!-- Section Header -->
+          <div class="text-center mb-16">
+            <div class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-brand-orange to-brand-orange-hover rounded-full mb-6 animate-pulse">
+              <span class="material-icons text-white text-3xl">help_outline</span>
+            </div>
+
+            <h2 class="text-4xl md:text-5xl font-extrabold mb-4">
+              FAQ:
+              <span class="bg-gradient-to-r from-brand-orange via-brand-crimson to-brand-orange-fire bg-clip-text text-transparent">
+              Key Kings Locksmith
+              </span>
+            </h2>
+
+            <p class="text-brand-dark text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
+              Get answers instantly by hovering over each question below.
+            </p>
+          </div>
+
+          <!-- FAQ Cards Grid -->
+          <div class="grid gap-6 md:grid-cols-2">
+            {faq.map(item => (
+              <div class="faq-card bg-white/70 backdrop-blur-md rounded-3xl p-6 border-2 border-brand-orange group cursor-pointer overflow-hidden transition-all duration-300">
+              <div class="flex justify-between items-center">
+                <h3 class="text-lg md:text-xl font-semibold text-brand-dark group-hover:text-brand-orange transition-colors duration-300">
+                <span class="material-icons text-brand-orange mr-2 align-middle">{item.icon}</span>
+                {item.question}
+                </h3>
+                <span class="material-icons text-brand-orange transition-transform duration-300 group-hover:rotate-180">expand_more</span>
+              </div>
+              <div class="mt-4 max-h-0 overflow-hidden transition-all duration-500 group-hover:max-h-96">
+                <p class="text-gray-600 leading-relaxed">{item.answer}</p>
+              </div>
+              </div>
+            ))}
+          </div>
+
+          <!-- CTA Button -->
+          <div class="text-center mt-12">
+            <a href="/faq"
+              class="inline-flex items-center justify-center gap-3 px-8 py-4 font-bold text-lg bg-gradient-to-r from-brand-orange to-brand-orange-hover text-white rounded-2xl shadow-2xl hover:from-brand-orange-hover hover:to-brand-orange transform hover:scale-105 transition-all duration-300">
+              <span class="material-icons text-2xl">help_outline</span>
+              <span>View All FAQs</span>
+              <span class="material-icons text-lg">arrow_forward</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Reviews Section -->
+		<section class="bg-[rgba(249,237,237,1)] py-20 px-4 sm:px-6">
+			<div class="container mx-auto text-center max-w-6xl">
+
+			<!-- Header -->
+			<div class="mb-12">
+				<div class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-brand-orange to-brand-orange-hover rounded-full mb-6 animate-pulse">
+					<span class="material-icons text-white text-3xl">feedback</span>
+				</div>
+				<h2 class="text-4xl md:text-5xl font-extrabold leading-tight mb-4 
+							bg-gradient-to-r from-brand-orange to-brand-crimson 
+							bg-clip-text text-transparent">
+					What Our Clients Say
+				</h2>
+				<p class="text-brand-dark text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
+					Don't just take our word — see what our customers say.
+				</p>
+			</div>
+
+				<!-- Reviews Grid -->
+				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+					{reviews.map((review) => (
+						<div class="p-[3px] rounded-3xl bg-gradient-to-r from-brand-orange to-brand-crimson">
+						<div class="bg-[#F5F5F5] p-8 rounded-3xl shadow-xl flex flex-col justify-between h-full">
+							<div>
+							<div class="flex items-center mb-6">
+								<div class="w-14 h-14 rounded-full bg-brand-orange flex items-center justify-center mr-4 font-bold text-white text-lg shadow-lg">
+								{review.avatar}
+								</div>
+								<div class="text-left">
+								<p class="text-lg font-bold text-[#1C1C1C]">{review.name}</p>
+								<p class="text-sm text-[#666666] flex items-center mt-1">
+									<span class="material-icons text-sm mr-2 text-brand-orange">location_on</span>
+									{review.location}
+								</p>
+								</div>
+							</div>
+							<div class="mb-6 relative">
+								<div class="absolute -top-3 -left-3 w-12 h-12 bg-gradient-to-br from-brand-orange-light to-brand-orange-fire rounded-full flex items-center justify-center">
+								<span class="material-icons text-2xl text-brand-orange">format_quote</span>
+								</div>
+								<div class="bg-white p-6 rounded-2xl border border-brand-orange-light">
+								<p class="text-[#1C1C1C] leading-relaxed text-left text-base italic">
+									{review.review}
+								</p>
+								</div>
+							</div>
+							</div>
+							<div class="flex justify-between items-center">
+							<div class="flex space-x-1">
+								{Array.from({ length: 5 }).map(() => (
+								<span class="material-icons text-brand-orange text-lg">star</span>
+								))}
+							</div>
+							<div class="bg-brand-orange-light px-4 py-2 rounded-full">
+								<span class="text-brand-orange font-semibold text-sm">{review.service}</span>
+							</div>
+							</div>
+						</div>
+						</div>
+					))}
+				</div>
+
+				<!-- CTA Button -->
+				<div class="text-center mt-12">
+					<a href="/reviews"
+						class="inline-flex items-center justify-center gap-3 px-8 py-4 font-bold text-lg bg-gradient-to-r from-brand-orange to-brand-orange-hover text-white rounded-2xl shadow-2xl hover:from-brand-orange-hover hover:to-brand-orange transform hover:scale-105 transition-all duration-300">
+						<span class="material-icons text-2xl">rate_review</span>
+						<span>View All Reviews</span>
+						<span class="material-icons text-lg">arrow_forward</span>
+					</a>
+				</div>
+			</div>
+		</section>
+
+    <section class="relative bg-black text-[hsla(0,50%,95%,1)] py-20 overflow-hidden">
+      <div class="relative z-10 max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-12">
+
+        <!-- Left Side: Text & Buttons -->
+        <div class="md:w-1/2 space-y-6 text-center md:text-left">
+
+          <!-- Icon Circle -->
+          <div class="flex justify-center mb-6">
+            <div class="w-20 h-20 bg-[hsla(0,50%,95%,0.1)] backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg animate-pulse">
+              <span class="material-icons text-[hsla(33,100%,48%,1)] text-5xl animate-bounce-subtle">{cta.visual.icon}</span>
+            </div>
+          </div>
+
+          <!-- Heading -->
+          <h2 class="text-3xl md:text-5xl font-extrabold leading-snug bg-gradient-to-r from-[hsla(33,100%,48%,1)] to-[hsla(37,100%,50%,1)] bg-clip-text text-transparent animate-fade-in">
+            {cta.heading}
+          </h2>
+
+          <!-- Subtext -->
+          <p class="text-base md:text-lg text-[hsla(0,50%,95%,0.9)] leading-relaxed animate-slide-down">
+            {cta.subtext}
+          </p>
+
+          <!-- Buttons -->
+          <div class="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-6">
+            <a href={`tel:${cta.phone.number}`}
+              class="flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-[hsla(33,100%,48%,1)] to-[hsla(37,100%,50%,1)] text-[hsla(0,50%,95%,1)] font-bold rounded-xl shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 animate-glow">
+              <span class="material-icons text-[hsla(0,50%,95%,1)] text-xl animate-bounce-subtle">call</span>
+              <span>Call {cta.phone.display}</span>
+            </a>
+            <a href={cta.bookServiceLink}
+              class="flex items-center gap-3 px-8 py-4 border-2 border-[hsla(0,50%,95%,1)] bg-transparent text-[hsla(0,50%,95%,1)] font-bold rounded-xl hover:bg-[hsla(40,95%,54%,1)] hover:text-[hsla(0,100%,2%,1)] hover:scale-105 transition-all duration-300 animate-fade-in">
+              <span class="material-icons text-lg">calendar_month</span>
+              <span>Book Service</span>
+            </a>
+          </div>
+
+          <!-- Features -->
+          <div class="flex flex-nowrap justify-center md:justify-start gap-6 mt-6 text-[hsla(0,50%,95%,0.9)] text-sm">
+            {cta.features.map(feature => (
+              <div class="flex items-center gap-1 hover:scale-105 transition-transform duration-300">
+                <span class="material-icons" style={`color: ${feature.color}`}>{feature.icon}</span>
+                <span>{feature.text}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- Right Side: Visual Panel -->
+        <div class="md:w-1/2 relative flex items-center justify-center">
+          {cta.visual.blurCircles.map(circle => (
+            <div class={`absolute ${circle.size} bg-[${circle.color}] rounded-full ${circle.position} blur-3xl animate-pulse`}></div>
+          ))}
+
+          <div class={`w-80 h-80 bg-[${cta.visual.bgColor}] backdrop-blur-sm rounded-3xl flex items-center justify-center shadow-lg`}>
+            <span class={`material-icons text-[hsla(33,100%,48%,1)] text-${cta.visual.size} animate-bounce`}>{cta.visual.icon}</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    </main>
+
+    <Footer />
+
+  </body>
+</html>
