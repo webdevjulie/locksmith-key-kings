@@ -1,10 +1,10 @@
 ---
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+import HeaderPage from '../components/Header.jsx';
+import Footer from '../components/Footer.jsx';
 import ContactPage from '../components/contact/ContactPage.jsx';
 import { faq } from '../data/faq.js';
-import { about } from '../data/about.js';
 import { reviews } from '../data/reviews.js';
+import CtaPage from '../components/cta/Cta.jsx';
 import '../styles/global.css';
 ---
 
@@ -21,7 +21,7 @@ import '../styles/global.css';
   <body class="font-poppins">
     
     <main class="pt-20">
-      <Header />
+      <HeaderPage client:load />
 
       <ContactPage client:load />
 
@@ -152,9 +152,10 @@ import '../styles/global.css';
 			</div>
 		</section>
 
+		<CtaPage client:load />
     </main>
 
-    <Footer />
+    <Footer client:load />
 
   </body>
 </html>

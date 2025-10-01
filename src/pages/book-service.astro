@@ -1,6 +1,6 @@
 ---
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+import HeaderPage from '../components/Header.jsx';
+import Footer from '../components/Footer.jsx';
 import BookingPage from '../components/booking/booking-service.jsx';
 import '../styles/global.css';
 ---
@@ -16,13 +16,13 @@ import '../styles/global.css';
     <title>Book Service | Key Kings Locksmith</title>
   </head>
   <body class="font-poppins">
-    <Header />
+    <HeaderPage client:load />
     
     <main class="pt-20">
       <BookingPage client:load />
     </main>
 
-    <Footer />
+    <Footer client:load />
 
   </body>
 </html>

@@ -1,12 +1,13 @@
 ---
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+import HeaderPage from '../components/Header.jsx';
+import Footer from '../components/Footer.jsx';
 import ServiceAreasPage from '../components/service-areas/ServiceAreasPage.jsx';
 import ServiceOverviewPage from '../components/service-areas/ServiceOverviewPage.jsx';
 import ServiceAreasServices from '../components/service-areas/ServiceAreasServices.jsx';
 import ServiceAreasTowns from '../components/service-areas/ServiceAreasTowns.jsx';
 import { faq } from '../data/faq.js';
 import { reviews } from '../data/reviews.js';
+import CtaPage from '../components/cta/Cta.jsx';
 import '../styles/global.css';
 ---
 
@@ -24,7 +25,8 @@ import '../styles/global.css';
  
     
     <main class="pt-20">
-      <Header />
+
+      <HeaderPage client:load /> <!--Header(NAV) -->
 
       <ServiceAreasPage client:load /> <!--hero section -->
       <ServiceOverviewPage client:load /> <!--service overview section -->
@@ -158,9 +160,10 @@ import '../styles/global.css';
 			</div>
 		</section>
 
+		<CtaPage client:load />
     </main>
 
-    <Footer />
+    <Footer client:load />
 
   </body>
 </html>

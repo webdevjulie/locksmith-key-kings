@@ -1,10 +1,11 @@
 ---
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+import HeaderPage from '../components/Header.jsx';
+import Footer from '../components/Footer.jsx';
 import ServicePage from '../components/services/ServicePage.jsx';
 import ServicesSection from '../components/services/ServicesSection.jsx';
 import { faq } from '../data/faq.js';
 import { reviews } from '../data/reviews.js';
+import CtaPage from '../components/cta/Cta.jsx';
 import '../styles/global.css';
 ---
 
@@ -21,7 +22,8 @@ import '../styles/global.css';
   <body class="font-poppins">
 
     <main class="pt-20">
-      <Header />
+
+      <HeaderPage client:load />
     
       <ServicePage client:load />
       <ServicesSection client:load />
@@ -155,9 +157,10 @@ import '../styles/global.css';
 
     <section class="relative bg-black text-[hsla(0,50%,95%,1)] py-20 overflow-hidden">
 
+		<CtaPage client:load />
     </main>
 
-    <Footer />
+    <Footer client:load />
 
   </body>
 </html>

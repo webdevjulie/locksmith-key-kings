@@ -1,12 +1,12 @@
 ---
-import Header from '../components/Header.astro';
+import HeaderPage from '../components/Header.jsx';
 import { serviceoverview } from '../data/serviceoverview.js';
 import { emergencyInfo } from '../data/emergency.js';
 import { whyChoose } from '../data/whyChoose.js';
 import { faq } from '../data/faq.js';
 import { reviews } from '../data/reviews.js';
 import { ctaData } from '../data/cta.js';
-import Footer from '../components/Footer.astro';
+import Footer from '../components/Footer.jsx';
 import '../styles/global.css';
 ---
 
@@ -21,7 +21,8 @@ import '../styles/global.css';
     <title>Key Kings Locksmith</title>
   </head>
   <body class="font-poppins">
-    <Header />
+
+ 	<HeaderPage client:load />
 
     <main class="pt-20">
 		<section class="relative text-white min-h-screen flex flex-col md:flex-row items-center justify-center px-4 sm:px-6 lg:px-12 gap-8 md:gap-16 overflow-hidden">
@@ -570,6 +571,6 @@ import '../styles/global.css';
 
 	</main>
 
-		<Footer />
+		<Footer client:load />
 	</body>
 </html>

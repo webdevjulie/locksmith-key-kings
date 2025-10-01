@@ -1,9 +1,10 @@
 ---
-import Header from '../../components/Header.astro';
-import Footer from '../../components/Footer.astro';
+import HeaderPage from '../../components/Header.jsx';
+import Footer from '../../components/Footer.jsx';
 import ResidentialPage from '../../components/locksmith-services/ResidentialLocksmith';
 import { faq } from '../../data/faq.js';
 import { reviews } from '../../data/reviews.js';
+import CtaPage from '../../components/cta/Cta.jsx';
 import '../../styles/global.css';
 ---
 
@@ -18,9 +19,10 @@ import '../../styles/global.css';
     <title>Residential Locksmith | Key Kings Locksmith</title>
   </head>
   <body class="font-poppins">
-    <Header />
+    <HeaderPage client:load />
     
     <main class="pt-20">
+
       <ResidentialPage client:load />
 
       <!-- FAQs Section -->
@@ -149,9 +151,11 @@ import '../../styles/global.css';
 				</div>
 			</div>
 		</section>
+
+		<CtaPage client:load />
     </main>
 
-    <Footer />
+    <Footer client:load />
 
   </body>
 </html>

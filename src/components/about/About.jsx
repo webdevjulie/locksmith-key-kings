@@ -6,7 +6,7 @@ export default function AboutPage() {
   subtitle: "Anderson Trusted Mobile Locksmith Service",
   description:
     "Learn more about Key Kings Locksmith — your reliable Anderson locksmith company. As a licensed locksmith in Anderson, we provide fast, professional, and affordable mobile locksmith service for homes, businesses, and vehicles across the community.",
-  backgroundImage: "../images/about-us.webp",
+  backgroundImage: "./images/about-us.webp",
   breadcrumbs: [
     { name: "Home", url: "/index" },
     { name: "Locksmith About", url: "/about" },
