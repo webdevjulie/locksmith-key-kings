@@ -1,6 +1,10 @@
 ---
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import ServiceAreasPage from '../components/service-areas/ServiceAreasPage.jsx';
+import ServiceOverviewPage from '../components/service-areas/ServiceOverviewPage.jsx';
+import ServiceAreasServices from '../components/service-areas/ServiceAreasServices.jsx';
+import ServiceAreasTowns from '../components/service-areas/ServiceAreasTowns.jsx';
 import { faq } from '../data/faq.js';
 import { about } from '../data/about.js';
 import { reviews } from '../data/reviews.js';
@@ -20,9 +24,16 @@ import '../styles/global.css';
     <title>Service Areas | Key Kings Locksmith</title>
   </head>
   <body class="font-poppins">
-    <Header />
+ 
     
     <main class="pt-20">
+      <Header />
+
+      <ServiceAreasPage client:load /> <!--hero section -->
+      <ServiceOverviewPage client:load /> <!--service overview section -->
+      <ServiceAreasServices client:load /> <!--services section -->
+      <ServiceAreasTowns client:load /> <!--service areas/towns section -->
+
       <!-- FAQs Section -->
       <section class="relative bg-[rgba(249,237,237,1)] text-brand-dark py-20 md:py-28">
         <div class="max-w-6xl mx-auto px-6">

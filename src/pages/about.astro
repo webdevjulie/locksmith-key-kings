@@ -1,11 +1,9 @@
 ---
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import AboutPage from '../components/about/About.jsx';
 import { faq } from '../data/faq.js';
-import { about } from '../data/about.js';
 import { reviews } from '../data/reviews.js';
-const { trust } = about;
-const { cta } = about;
 import '../styles/global.css';
 ---
 
@@ -19,117 +17,13 @@ import '../styles/global.css';
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
     <title>About Us | Key Kings Locksmith</title>
   </head>
+ 
   <body class="font-poppins">
-    <Header />
     
     <main class="pt-20">
-      <section 
-        class="relative bg-cover bg-center text-white min-h-screen flex items-center justify-center text-center px-6"
-        style={`background-image: url(${about.backgroundImage});`}
-      >
-        <div class="absolute inset-0 bg-black/70"></div>
-        <div class="relative z-10 max-w-3xl mx-auto space-y-6">
-          <nav class="text-sm mb-6 bg-transparent">
-            <ol class="flex items-center justify-center space-x-2 text-gray-400">
-              {about.breadcrumbs.map((crumb, index) => (
-                <>
-                  <li>
-                    <a href={crumb.url} class="hover:underline hover:text-[#FD9A00] transition">{crumb.name}</a>
-                  </li>
-                  {index < about.breadcrumbs.length - 1 && (
-                    <li><span class="mx-1 text-gray-500">/</span></li>
-                  )}
-                </>
-              ))}
-            </ol>
-          </nav>
+      <Header />
 
-          <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold leading-snug">
-            {about.title}
-            <span class="text-[#FD9A00] block mt-2">{about.subtitle}</span>
-          </h1>
-
-          <p class="text-lg text-gray-100 leading-relaxed">{about.description}</p>
-        </div>
-      </section>
-
-      <!-- Our Story Section -->
-      <section class="relative bg-[rgba(249,237,237,1)] py-20 px-6 md:px-12 text-[#3B2F2F]">
-        <div class="max-w-6xl mx-auto space-y-12">
-          
-          <!-- Section Header -->
-          <div class="text-center mb-12">
-            <h2 class="text-4xl md:text-5xl font-extrabold mb-4 text-[#0C0000]">
-              Our <span class="text-[#FD9A00]">{about.ourStory.header}</span>
-            </h2>
-            <p class="text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">{about.ourStory.subheader}</p>
-          </div>
-
-          <!-- Our Story Card -->
-          <div class="bg-white/70 backdrop-blur-md rounded-3xl p-8 border-2 border-[#FD9A00] shadow-lg flex flex-col md:flex-row items-center gap-6 transition-transform hover:scale-105 duration-300">
-            <img src={about.ourStory.image} alt="Company Story" class="w-full md:w-1/3 rounded-2xl shadow-md">
-            <div class="md:w-2/3 space-y-4">
-              <h3 class="text-2xl font-semibold text-[#FD9A00]">{about.ourStory.header}</h3>
-              <p class="text-gray-700 leading-relaxed">{about.ourStory.text}</p>
-            </div>
-          </div>
-
-          <!-- Mission & Vision Cards -->
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div class="bg-white/70 backdrop-blur-md rounded-3xl p-8 border-2 border-[#FD9A00] shadow-lg text-center transition-transform hover:scale-105 duration-300">
-              <span class="material-icons text-4xl text-[#FD9A00] mb-4">{about.mission.icon}</span>
-              <h4 class="text-2xl font-semibold text-[#FD9A00] mb-2">{about.mission.title}</h4>
-              <p class="text-gray-700 leading-relaxed">{about.mission.text}</p>
-            </div>
-
-            <div class="bg-white/70 backdrop-blur-md rounded-3xl p-8 border-2 border-[#FD9A00] shadow-lg text-center transition-transform hover:scale-105 duration-300">
-              <span class="material-icons text-4xl text-[#FD9A00] mb-4">{about.vision.icon}</span>
-              <h4 class="text-2xl font-semibold text-[#FD9A00] mb-2">{about.vision.title}</h4>
-              <p class="text-gray-700 leading-relaxed">{about.vision.text}</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Certifications Section -->
-      <section class="relative bg-[rgba(249,237,237,1)] py-20 px-6 md:px-12 text-[#0C0000]">
-        <div class="max-w-6xl mx-auto space-y-8">
-          <h2 class="text-4xl md:text-5xl font-extrabold text-center mb-8">
-            {about.certifications.header.split(" ")[0]} <span class="text-[#FD9A00]">{about.certifications.header.split(" ")[1]}</span>
-          </h2>
-          <div class="bg-white/70 backdrop-blur-md rounded-3xl p-8 border-2 border-[#FD9A00] shadow-lg flex flex-col md:flex-row items-center gap-6 transition-transform hover:scale-105 duration-300">
-            <img src={about.certifications.image} alt="Certifications" class="w-full md:w-1/3 rounded-2xl shadow-md">
-            <div class="md:w-2/3 space-y-4">
-              <h3 class="text-2xl font-semibold text-[#FD9A00]">{about.certifications.title}</h3>
-              <p class="text-gray-700 leading-relaxed">{about.certifications.text}</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="relative bg-[rgba(249,237,237,1)] py-20 px-6 md:px-12 text-[#0C0000]">
-        <div class="max-w-6xl mx-auto space-y-12">
-
-          <!-- Section Header -->
-          <div class="text-center mb-12">
-            <h2 class="text-4xl md:text-5xl font-extrabold mb-4">
-              {trust.header.split(" ")[0]} <span class="text-[#FD9A00]">{trust.header.split(" ").slice(1).join(" ")}</span>
-            </h2>
-            <p class="text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">{trust.subheader}</p>
-          </div>
-
-          <!-- Trust Cards Grid -->
-          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-            {trust.cards.map((card) => (
-              <div class="bg-white/70 backdrop-blur-md rounded-3xl p-6 border-2 border-[#FD9A00] shadow-lg flex flex-col items-center text-center transition-transform hover:scale-105 duration-300">
-                <span class="material-icons text-4xl text-[#FD9A00] mb-4">{card.icon}</span>
-                <h4 class="text-2xl font-semibold text-[#FD9A00] mb-2">{card.title}</h4>
-                <p class="text-gray-700 leading-relaxed">{card.text}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <AboutPage client:load />
 
       <!-- FAQs Section -->
       <section class="relative bg-[rgba(249,237,237,1)] text-brand-dark py-20 md:py-28">
@@ -258,67 +152,6 @@ import '../styles/global.css';
 			</div>
 		</section>
 
-    <section class="relative bg-black text-[hsla(0,50%,95%,1)] py-20 overflow-hidden">
-      <div class="relative z-10 max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-12">
-
-        <!-- Left Side: Text & Buttons -->
-        <div class="md:w-1/2 space-y-6 text-center md:text-left">
-
-          <!-- Icon Circle -->
-          <div class="flex justify-center mb-6">
-            <div class="w-20 h-20 bg-[hsla(0,50%,95%,0.1)] backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg animate-pulse">
-              <span class="material-icons text-[hsla(33,100%,48%,1)] text-5xl animate-bounce-subtle">{cta.visual.icon}</span>
-            </div>
-          </div>
-
-          <!-- Heading -->
-          <h2 class="text-3xl md:text-5xl font-extrabold leading-snug bg-gradient-to-r from-[hsla(33,100%,48%,1)] to-[hsla(37,100%,50%,1)] bg-clip-text text-transparent animate-fade-in">
-            {cta.heading}
-          </h2>
-
-          <!-- Subtext -->
-          <p class="text-base md:text-lg text-[hsla(0,50%,95%,0.9)] leading-relaxed animate-slide-down">
-            {cta.subtext}
-          </p>
-
-          <!-- Buttons -->
-          <div class="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-6">
-            <a href={`tel:${cta.phone.number}`}
-              class="flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-[hsla(33,100%,48%,1)] to-[hsla(37,100%,50%,1)] text-[hsla(0,50%,95%,1)] font-bold rounded-xl shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 animate-glow">
-              <span class="material-icons text-[hsla(0,50%,95%,1)] text-xl animate-bounce-subtle">call</span>
-              <span>Call {cta.phone.display}</span>
-            </a>
-            <a href={cta.bookServiceLink}
-              class="flex items-center gap-3 px-8 py-4 border-2 border-[hsla(0,50%,95%,1)] bg-transparent text-[hsla(0,50%,95%,1)] font-bold rounded-xl hover:bg-[hsla(40,95%,54%,1)] hover:text-[hsla(0,100%,2%,1)] hover:scale-105 transition-all duration-300 animate-fade-in">
-              <span class="material-icons text-lg">calendar_month</span>
-              <span>Book Service</span>
-            </a>
-          </div>
-
-          <!-- Features -->
-          <div class="flex flex-nowrap justify-center md:justify-start gap-6 mt-6 text-[hsla(0,50%,95%,0.9)] text-sm">
-            {cta.features.map(feature => (
-              <div class="flex items-center gap-1 hover:scale-105 transition-transform duration-300">
-                <span class="material-icons" style={`color: ${feature.color}`}>{feature.icon}</span>
-                <span>{feature.text}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <!-- Right Side: Visual Panel -->
-        <div class="md:w-1/2 relative flex items-center justify-center">
-          {cta.visual.blurCircles.map(circle => (
-            <div class={`absolute ${circle.size} bg-[${circle.color}] rounded-full ${circle.position} blur-3xl animate-pulse`}></div>
-          ))}
-
-          <div class={`w-80 h-80 bg-[${cta.visual.bgColor}] backdrop-blur-sm rounded-3xl flex items-center justify-center shadow-lg`}>
-            <span class={`material-icons text-[hsla(33,100%,48%,1)] text-${cta.visual.size} animate-bounce`}>{cta.visual.icon}</span>
-          </div>
-        </div>
-
-      </div>
-    </section>
 
     </main>
 

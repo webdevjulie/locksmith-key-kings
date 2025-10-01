@@ -6,7 +6,7 @@ export const contacts = [
 ];
 
 export const services = [
-  { name: "Residential Locksmith", icon: "home", url: "/residential-locksmith" },
+  { name: "Residential Locksmith", icon: "home", url: "../../sevices/residential-locksmith" },
   { name: "Commercial Locksmith", icon: "business", url: "/commercial-locksmith" },
   { name: "Automotive Locksmith", icon: "directions_car", url: "/automotive-locksmith" },
   { name: "Emergency Locksmith", icon: "lock_clock", url: "/emergency-locksmith" }

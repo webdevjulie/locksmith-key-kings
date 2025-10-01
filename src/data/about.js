@@ -8,7 +8,7 @@ export const about = {
                "mobile locksmith service for homes, businesses, and vehicles across the community.",
   backgroundImage: "../images/about-us.webp",
   breadcrumbs: [
-    { name: "Home", url: "/" },
+    { name: "Home", url: "/index" },
     { name: "Locksmith About", url: "/about" }
   ],
 
@@ -69,41 +69,4 @@ export const about = {
       }
     ]
   },
-
-  // CTA Section
-  cta: {
-    heading: "Need Key Kings Help Fast?",
-    subtext: "Immediate assistance whenever you need it. Protect your home, office, and family with our trusted and certified locksmiths.",
-    phone: {
-      number: "+18649009597",
-      display: "(864) 900-9597"
-    },
-    bookServiceLink: "/book-service",
-    features: [
-      {
-        icon: "schedule",
-        text: "24/7 Service",
-        color: "hsla(33,100%,48%,1)"
-      },
-      {
-        icon: "verified",
-        text: "Licensed & Insured",
-        color: "hsla(37,100%,50%,1)"
-      },
-      {
-        icon: "star",
-        text: "5-Star Rated",
-        color: "hsla(33,100%,48%,1)"
-      }
-    ],
-    visual: {
-      icon: "lock",
-      size: "8xl",
-      bgColor: "hsla(33,100%,48%,0.1)",
-      blurCircles: [
-        { size: "w-72 h-72", color: "hsla(33,100%,48%,0.15)", position: "top-0 right-0" },
-        { size: "w-64 h-64", color: "hsla(37,100%,50%,0.15)", position: "bottom-0 left-0" }
-      ]
-    }
-  }
 };

@@ -1,6 +1,7 @@
 ---
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import ContactPage from '../components/contact/ContactPage.jsx';
 import { faq } from '../data/faq.js';
 import { about } from '../data/about.js';
 import { reviews } from '../data/reviews.js';
@@ -20,9 +21,12 @@ import '../styles/global.css';
     <title>Contact | Key Kings Locksmith</title>
   </head>
   <body class="font-poppins">
-    <Header />
     
     <main class="pt-20">
+      <Header />
+
+      <ContactPage client:load />
+
      <!-- FAQs Section -->
       <section class="relative bg-[rgba(249,237,237,1)] text-brand-dark py-20 md:py-28">
         <div class="max-w-6xl mx-auto px-6">

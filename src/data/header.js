@@ -2,7 +2,7 @@
 export const logo = {
   src: "../images/key-kings.jpeg",
   alt: "Key Kings Locksmith",
-  link: "/index.astro",
+  link: "/index",
   width: 10, //px
   height: 10
 };
@@ -22,4 +22,4 @@ export const callInfo = {
   display: "(864) 900-9597"
 };
 
-export const bookServiceLink = "/book-service.astro";
+export const bookServiceLink = "/book-service";
