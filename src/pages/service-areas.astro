@@ -6,10 +6,7 @@ import ServiceOverviewPage from '../components/service-areas/ServiceOverviewPage
 import ServiceAreasServices from '../components/service-areas/ServiceAreasServices.jsx';
 import ServiceAreasTowns from '../components/service-areas/ServiceAreasTowns.jsx';
 import { faq } from '../data/faq.js';
-import { about } from '../data/about.js';
 import { reviews } from '../data/reviews.js';
-const { trust } = about;
-const { cta } = about;
 import '../styles/global.css';
 ---
 
@@ -161,67 +158,6 @@ import '../styles/global.css';
 			</div>
 		</section>
 
-    <section class="relative bg-black text-[hsla(0,50%,95%,1)] py-20 overflow-hidden">
-      <div class="relative z-10 max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-12">
-
-        <!-- Left Side: Text & Buttons -->
-        <div class="md:w-1/2 space-y-6 text-center md:text-left">
-
-          <!-- Icon Circle -->
-          <div class="flex justify-center mb-6">
-            <div class="w-20 h-20 bg-[hsla(0,50%,95%,0.1)] backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg animate-pulse">
-              <span class="material-icons text-[hsla(33,100%,48%,1)] text-5xl animate-bounce-subtle">{cta.visual.icon}</span>
-            </div>
-          </div>
-
-          <!-- Heading -->
-          <h2 class="text-3xl md:text-5xl font-extrabold leading-snug bg-gradient-to-r from-[hsla(33,100%,48%,1)] to-[hsla(37,100%,50%,1)] bg-clip-text text-transparent animate-fade-in">
-            {cta.heading}
-          </h2>
-
-          <!-- Subtext -->
-          <p class="text-base md:text-lg text-[hsla(0,50%,95%,0.9)] leading-relaxed animate-slide-down">
-            {cta.subtext}
-          </p>
-
-          <!-- Buttons -->
-          <div class="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-6">
-            <a href={`tel:${cta.phone.number}`}
-              class="flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-[hsla(33,100%,48%,1)] to-[hsla(37,100%,50%,1)] text-[hsla(0,50%,95%,1)] font-bold rounded-xl shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 animate-glow">
-              <span class="material-icons text-[hsla(0,50%,95%,1)] text-xl animate-bounce-subtle">call</span>
-              <span>Call {cta.phone.display}</span>
-            </a>
-            <a href={cta.bookServiceLink}
-              class="flex items-center gap-3 px-8 py-4 border-2 border-[hsla(0,50%,95%,1)] bg-transparent text-[hsla(0,50%,95%,1)] font-bold rounded-xl hover:bg-[hsla(40,95%,54%,1)] hover:text-[hsla(0,100%,2%,1)] hover:scale-105 transition-all duration-300 animate-fade-in">
-              <span class="material-icons text-lg">calendar_month</span>
-              <span>Book Service</span>
-            </a>
-          </div>
-
-          <!-- Features -->
-          <div class="flex flex-nowrap justify-center md:justify-start gap-6 mt-6 text-[hsla(0,50%,95%,0.9)] text-sm">
-            {cta.features.map(feature => (
-              <div class="flex items-center gap-1 hover:scale-105 transition-transform duration-300">
-                <span class="material-icons" style={`color: ${feature.color}`}>{feature.icon}</span>
-                <span>{feature.text}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <!-- Right Side: Visual Panel -->
-        <div class="md:w-1/2 relative flex items-center justify-center">
-          {cta.visual.blurCircles.map(circle => (
-            <div class={`absolute ${circle.size} bg-[${circle.color}] rounded-full ${circle.position} blur-3xl animate-pulse`}></div>
-          ))}
-
-          <div class={`w-80 h-80 bg-[${cta.visual.bgColor}] backdrop-blur-sm rounded-3xl flex items-center justify-center shadow-lg`}>
-            <span class={`material-icons text-[hsla(33,100%,48%,1)] text-${cta.visual.size} animate-bounce`}>{cta.visual.icon}</span>
-          </div>
-        </div>
-
-      </div>
-    </section>
     </main>
 
     <Footer />
