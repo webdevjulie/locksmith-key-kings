@@ -5,7 +5,7 @@ export default function FAQPage() {
     title: "Frequently Asked Questions",
     subtitle: "Key Kings Locksmith Help Center",
     description: `Find answers to the most common questions about our locksmith services. From emergency lockouts to key replacements, Key Kings Locksmith provides clear guidance to help you quickly and safely.`,
-    backgroundImage: "./images/faqs.webp",
+    backgroundImage: "/images/faqs.webp", // or faqsImage if imported
     breadcrumb: [
       { name: "Home", link: "/index" },
       { name: "FAQs" }
@@ -54,9 +54,9 @@ export default function FAQPage() {
     <div>
       {/* Page Header */}
       <section
-        className="relative bg-cover bg-center text-white min-h-screen flex items-center justify-center text-center px-6"
-        style={{ backgroundImage: `url('${pageHeader.backgroundImage}')` }}
-      >
+         className="relative bg-cover bg-center text-white min-h-screen flex items-center justify-center text-center px-6"
+      style={{ backgroundImage: `url(${pageHeader.backgroundImage})` }}
+    >
         <div className="absolute inset-0 bg-black/70"></div>
         <div className="relative z-10 max-w-3xl mx-auto space-y-6">
           <nav className="text-sm mb-6 bg-transparent">

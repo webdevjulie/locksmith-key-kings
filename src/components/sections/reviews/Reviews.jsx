@@ -5,7 +5,7 @@ const pageHeader = {
     title: "What Our Clients Say",
     subtitle: "Trusted Locksmith Service Feedback",
     description: `Hear directly from our satisfied customers. Discover why Key Kings Locksmith is trusted for fast, reliable, and professional locksmith services in Anderson for homes, businesses, and vehicles.`,
-    backgroundImage: "./images/reviews.webp",
+    backgroundImage: "./hero/reviews.webp",
     breadcrumb: [
         { name: "Home", link: "/index" },
         { name: "Reviews" }

@@ -13,9 +13,9 @@ export default function HeaderPage() {
   }, []);
 
   const logo = {
-    src: "../images/key-kings.jpeg",
+    src: "../logo/key-kings.jpeg",
     alt: "Key Kings Locksmith",
-    link: "/",
+    link: "../../../../index",
     width: 12,
     height: 12
   };

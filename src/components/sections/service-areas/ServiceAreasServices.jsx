@@ -4,7 +4,7 @@ export default function ServiceAreasServices() {
   const services = [
     {
       title: "Emergency Locksmith",
-      img: "/images/emergency-locksmith.webp",
+      img: "/hero/emergency-locksmith.webp",
       desc: "Locked out? Key Kings Locksmith provides fast and reliable emergency lockout services for cars, homes, businesses, and storage units. Available 24/7.",
       bullets: [
         { icon: "flash_on", text: "Quick Response in 15-30 minutes" },
@@ -16,7 +16,7 @@ export default function ServiceAreasServices() {
     },
     {
       title: "Residential Locksmith",
-      img: "/images/residential-locksmith.webp",
+      img: "/hero/residential-locksmith.webp",
       desc: "Secure your home with Key Kings Locksmith. We handle lock replacement, rekeying, repairs, and gate locks to keep your family safe.",
       bullets: [
         { icon: "home", text: "Enhanced Home Security" },
@@ -28,7 +28,7 @@ export default function ServiceAreasServices() {
     },
     {
       title: "Commercial Locksmith",
-      img: "/images/commercial-locksmith.webp",
+      img: "/hero/commercial-locksmith.webp",
       desc: "Protect your business with our expert commercial locksmith services. Master keys, access control, and emergency exit devices for offices, warehouses, and stores.",
       bullets: [
         { icon: "business", text: "Advanced Access Control" },
@@ -40,7 +40,7 @@ export default function ServiceAreasServices() {
     },
     {
       title: "Automotive Locksmith",
-      img: "/images/auto-locksmith.webp",
+      img: "/hero/auto-locksmith.webp",
       desc: "Locked out of your car or need a new key? We provide car key replacement, fob programming, duplicates, and ignition repairs for all makes and models.",
       bullets: [
         { icon: "directions_car", text: "Quick On-Site Service" },

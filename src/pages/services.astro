@@ -1,11 +1,11 @@
 ---
-import HeaderPage from '../components/Header.jsx';
-import Footer from '../components/Footer.jsx';
-import ServicePage from '../components/services/ServicePage.jsx';
-import ServicesSection from '../components/services/ServicesSection.jsx';
+import HeaderPage from '../components/layouts/Header.jsx';
+import Footer from '../components/layouts/Footer.jsx';
+import ServicePage from '../components/sections/services/ServicePage.astro';
+import ServicesSection from '../components/sections/services/ServicesSection.jsx';
 import { faq } from '../data/faq.js';
 import { reviews } from '../data/reviews.js';
-import CtaPage from '../components/cta/Cta.jsx';
+import CtaPage from '../components/sections/cta/Cta.jsx';
 import '../styles/global.css';
 ---
 
@@ -26,6 +26,7 @@ import '../styles/global.css';
       <HeaderPage client:load />
     
       <ServicePage client:load />
+
       <ServicesSection client:load />
 
       <!-- FAQs Section -->

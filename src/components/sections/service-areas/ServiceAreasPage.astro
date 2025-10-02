@@ -1,0 +1,58 @@
+---
+import BookingFormPage from '../../../forms/BookingForm.astro';
+
+const servicePage = {
+  title: "Service Areas",
+  subtitle: "Fast, Reliable & Professional in Anderson",
+  description: `
+    Key Kings Locksmith proudly provides fast and professional locksmith services across multiple cities and neighborhoods.  
+    Whether you need emergency lockouts, residential security, commercial solutions, or automotive locksmith assistance, we've got you covered.
+  `,
+  backgroundImage: "/hero/areas.webp",
+  breadcrumbs: [
+    { name: "Home", url: "/" },
+    { name: "Locksmith Services" },
+  ],
+};
+---
+
+<section
+  class="relative bg-cover bg-center text-white py-16 md:py-20"
+  style={`background-image: url(${servicePage.backgroundImage})`}
+>
+  <div class="absolute inset-0 bg-black/70"></div>
+
+  <div class="max-w-7xl mx-auto px-6 relative z-10">
+    <!-- Breadcrumb -->
+    <nav class="text-sm bg-transparent mt-6 relative z-10">
+      <ol class="flex items-center space-x-2 text-gray-400">
+        {servicePage.breadcrumbs.map((crumb, index) => (
+          <>
+            {index > 0 && <li><span class="mx-1 text-gray-500">/</span></li>}
+            <li class={crumb.url ? "hover:underline hover:text-[#FD9A00] transition" : "text-gray-200"}>
+              {crumb.url ? <a href={crumb.url}>{crumb.name}</a> : crumb.name}
+            </li>
+          </>
+        ))}
+      </ol>
+    </nav>
+
+    <div class="grid lg:grid-cols-2 gap-10 items-center">
+      <!-- Left: Headline & Description -->
+      <div class="space-y-6">
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold leading-snug mb-4">
+          {servicePage.title}
+          <span class="text-[#FD9A00] block mt-2">{servicePage.subtitle}</span>
+        </h1>
+        <p class="text-lg text-gray-100 leading-relaxed">
+          {servicePage.description}
+        </p>
+      </div>
+
+      <!-- Right: Booking Form -->
+      <div>
+        <BookingFormPage />
+      </div>
+    </div>
+  </div>
+</section>

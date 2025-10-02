@@ -1,0 +1,255 @@
+---
+import BookingFormPage from '../../../forms/BookingForm.astro';
+
+const residential = {
+  title: "Residential Locksmith Services",
+  subtitle: "Fast, reliable, and secure",
+  backgroundImage: "../images/residential-locksmith.webp",
+  description: `
+    Fast and reliable residential locksmith services in South Bend. 
+    Available 24/7 to keep your home safe, secure, and accessible.
+  `,
+  phone: "(864) 900-9597",
+  badges: [
+    { icon: "verified", text: "Licensed & Insured" },
+    { icon: "schedule", text: "Available 24/7" },
+    { icon: "speed", text: "Fast Response Time" }
+  ],
+  bookNow: {
+    text: "Book Now",
+    href: "/book-service"
+  }
+};
+
+const lockoutServices = {
+  header: {
+    title: "Our Services",
+    subtitle: "Trusted residential locksmith solutions tailored to your needs.",
+  },
+  services: [
+    {
+      id: 1,
+      title: "Lock Replacement",
+      description: "Replace damaged or outdated locks quickly to ensure security.",
+      image: "../images/lock-installation.webp",
+    },
+    {
+      id: 2,
+      title: "Lock Rekey",
+      description: "Change the internal pins of existing locks to work with a new key.",
+      image: "../images/rekey.webp",
+    },
+    {
+      id: 3,
+      title: "Lock Repair",
+      description: "Fix broken or malfunctioning locks for enhanced safety.",
+      image: "../images/lock-repair.webp",
+    },
+    {
+      id: 4,
+      title: "Gate Locks",
+      description: "Secure gates with professional installation and repair services.",
+      image: "../images/gate-locks.webp",
+    },
+  ],
+};
+
+const howItWorks = {
+  header: {
+    title: "How It Works",
+    subtitle: "Our 4-step process ensures a stress-free locksmith experience.",
+  },
+  steps: [
+    {
+      id: 1,
+      title: "Request Service",
+      description: "Call us or book online with your service details and location.",
+    },
+    {
+      id: 2,
+      title: "Quick Dispatch",
+      description: "We send the nearest locksmith to your location immediately.",
+    },
+    {
+      id: 3,
+      title: "Expert Service",
+      description: "Our licensed locksmith solves the issue efficiently and securely.",
+    },
+    {
+      id: 4,
+      title: "Peace of Mind",
+      description: "Enjoy restored security and access, with work guaranteed.",
+    },
+  ],
+};
+
+const lockoutTips = {
+  header: {
+    title: "Residential Security Tips",
+    subtitle: "Protect your home and family with these practical tips.",
+  },
+  tips: [
+    {
+      id: 1,
+      title: "Upgrade Old Locks",
+      description: "Replace outdated locks with high-security deadbolts or smart locks.",
+    },
+    {
+      id: 2,
+      title: "Rekey After Moving",
+      description: "Always rekey or replace locks when moving into a new home.",
+    },
+    {
+      id: 3,
+      title: "Spare Key Safety",
+      description: "Avoid hiding spare keys outdoors—use a trusted neighbor instead.",
+    },
+    {
+      id: 4,
+      title: "Routine Maintenance",
+      description: "Lubricate and inspect locks regularly to prevent failures.",
+    },
+  ],
+};
+---
+
+<!-- Hero Section -->
+<section
+  class="relative bg-cover bg-center text-white py-20 md:py-28 flex flex-col md:flex-row justify-center items-center gap-12 md:gap-16"
+  style="background-image: url({residential.backgroundImage})"
+>
+  <div class="absolute inset-0 bg-black/70"></div>
+
+  <div class="relative z-10 w-full max-w-7xl flex flex-col md:flex-row items-center justify-between px-6 lg:px-12 gap-12">
+    <div class="flex-1 flex flex-col justify-center space-y-6 md:space-y-8 max-w-xl text-center md:text-left">
+      <h1 class="font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-snug tracking-tight drop-shadow-md">
+        <span class="text-[#FD9A00] drop-shadow-lg">{residential.title}</span>
+      </h1>
+
+      <p class="text-gray-200 text-base sm:text-lg md:text-xl leading-relaxed max-w-md mx-auto md:mx-0">{residential.description}</p>
+
+
+      <!-- Call & Book Now Buttons -->
+        <div class="flex flex-col sm:flex-row gap-4 mt-6 justify-start">
+          <!-- Call Button -->
+          <a
+            href={`tel:+1${residential.phone.replace(/\D/g, "")}`}
+            class="group flex items-center justify-center gap-2 bg-[#FD9A00] hover:bg-[#F58600] transition-all duration-300 rounded-2xl px-6 py-4 font-semibold text-white text-base transform hover:scale-105 shadow-xl hover:shadow-2xl min-w-[220px] relative overflow-hidden"
+          >
+            <span class="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition duration-500 rounded-2xl"></span>
+            <span class="material-icons text-lg">call</span>
+            <span>Call {residential.phone}</span>
+          </a>
+
+          <!-- Book Now Button -->
+          <a
+            href={residential.bookNow.href}
+            class="group flex items-center justify-center gap-2 border-2 border-[#FD9A00] rounded-2xl px-6 py-4 
+                  font-semibold text-white text-base hover:bg-gradient-to-r hover:from-[#FD9A00] hover:to-[#F58600] 
+                  transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-2xl min-w-[220px]"
+          >
+            <span>{residential.bookNow.text}</span>
+            <span class="material-icons text-lg transition-transform duration-300 group-hover:translate-x-1">
+              arrow_forward
+            </span>
+          </a>
+        </div>
+
+      <!-- Badges -->
+      <div class="flex flex-wrap gap-3 mt-6 justify-center md:justify-start">
+        {residential.badges.map((badge) => (
+          <span
+            class="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-4 py-2 text-xs sm:text-sm shadow-lg backdrop-blur-md text-white"
+          >
+            <span class="material-icons text-[#FD9A00] text-sm">{badge.icon}</span>
+            {badge.text}
+          </span>
+        ))}
+      </div>
+    </div>
+
+      <!-- Right: Booking Form -->
+      <div>
+        <BookingFormPage />
+      </div>
+  </div>
+</section>
+
+<!-- Services Section -->
+<section class="relative bg-[rgba(249,237,237,1)] text-white py-20 md:py-24 overflow-hidden">
+  <div class="relative z-10 max-w-7xl mx-auto px-6 text-center">
+    <h2 class="text-4xl md:text-5xl font-extrabold mb-4 text-[#FD9A00]">
+      {lockoutServices.header.title}
+    </h2>
+    <div class="mx-auto mb-10 w-24 h-1 bg-gradient-to-r from-[#FD9A00] via-[#F58600] to-[#F9AE19] rounded-full"></div>
+    <p class="text-lg md:text-xl text-[#0C0000] mb-16 max-w-3xl mx-auto">
+      {lockoutServices.header.subtitle}
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+      {lockoutServices.services.map((service) => (
+        <div
+          class="group relative rounded-3xl overflow-hidden shadow-lg border-2 border-[#FD9A00] flex flex-col h-72 cursor-pointer"
+          style={`background: url(${service.image}) center/cover no-repeat`}
+        >
+          <div class="bg-black/40 group-hover:bg-black/25 transition-all duration-500 flex flex-col justify-end p-6 h-full">
+            <h3 class="text-2xl font-bold mb-2 text-[#FD9A00] drop-shadow transform group-hover:scale-105 transition-all duration-500">
+              {service.title}
+            </h3>
+            <p class="text-sm text-gray-200 transform group-hover:scale-105 transition-all duration-500">
+              {service.description}
+            </p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- How It Works Section -->
+<section class="relative text-[#1C1C1C] py-20 md:py-24 bg-[rgba(249,237,237,1)]">
+  <div class="max-w-7xl mx-auto px-6 text-center">
+    <h2 class="text-4xl md:text-5xl font-extrabold mb-4 text-[#FD9A00]">
+      {howItWorks.header.title}
+    </h2>
+    <div class="mx-auto mb-10 w-24 h-1 bg-gradient-to-r from-[#FD9A00] via-[#F58600] to-[#F9AE19] rounded-full"></div>
+    <p class="text-lg md:text-xl text-[#0C0000] mb-16 max-w-3xl mx-auto">
+      {howItWorks.header.subtitle}
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+      {howItWorks.steps.map((step) => (
+        <div class="flex flex-col items-center bg-white/80 rounded-3xl p-6 border-2 border-[#FD9A00] shadow-lg hover:shadow-2xl transition text-center">
+          <div class="flex items-center justify-center w-16 h-16 rounded-full bg-[#FD9A00] text-white font-bold text-xl mb-4">
+            {step.id}
+          </div>
+          <h3 class="text-xl font-bold mb-2 text-[#1C1C1C]">{step.title}</h3>
+          <p class="text-[#333] text-sm">{step.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- Lockout Tips Section -->
+<section class="relative text-[#1C1C1C] py-20 md:py-24 bg-[rgba(249,237,237,1)]">
+  <div class="max-w-7xl mx-auto px-6 text-center">
+    <h2 class="text-4xl md:text-5xl font-extrabold mb-4 text-[#FD9A00]">
+      {lockoutTips.header.title}
+    </h2>
+    <div class="mx-auto mb-10 w-24 h-1 bg-gradient-to-r from-[#FD9A00] via-[#F58600] to-[#F9AE19] rounded-full"></div>
+    <p class="text-lg md:text-xl text-[#0C0000] mb-16 max-w-3xl mx-auto">
+      {lockoutTips.header.subtitle}
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+      {lockoutTips.tips.map((tip) => (
+        <div class="flex flex-col items-center bg-white/80 rounded-3xl p-6 border-2 border-[#FD9A00] shadow-lg hover:shadow-2xl transition text-center">
+          <span class="material-icons text-[#FD9A00] text-4xl mb-4">lightbulb</span>
+          <h3 class="text-xl font-bold mb-2 text-[#1C1C1C]">{tip.title}</h3>
+          <p class="text-[#333] text-sm">{tip.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
