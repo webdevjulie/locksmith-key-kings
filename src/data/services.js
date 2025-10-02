@@ -5,7 +5,7 @@ export const services = [
     id: 1,
     title: "Emergency Locksmith",
     description: "Locked out? Key Kings Locksmith provides fast and reliable emergency lockout services for cars, homes, businesses, and storage units. Available 24/7.",
-    image: "/images/emergency-locksmith.webp",
+    image: "/hero/emergency-locksmith.webp",
     features: [
       "Quick Response in 15-30 minutes",
       "Professional & Certified Technicians",
@@ -18,7 +18,7 @@ export const services = [
     id: 2,
     title: "Residential Locksmith",
     description: "Secure your home with Key Kings Locksmith. We handle lock replacement, rekeying, repairs, and gate locks to keep your family safe.",
-    image: "/images/residential-locksmith.webp",
+    image: "/hero/residential-locksmith.webp",
     features: [
       "Enhanced Home Security",
       "Fast & Professional Service",
@@ -31,7 +31,7 @@ export const services = [
     id: 3,
     title: "Commercial Locksmith",
     description: "Protect your business with our expert commercial locksmith services. Master keys, access control, and emergency exit devices for offices, warehouses, and stores.",
-    image: "/images/commercial-locksmith.webp",
+    image: "/hero/commercial-locksmith.webp",
     features: [
       "Advanced Access Control",
       "Emergency Lock Solutions",
@@ -44,7 +44,7 @@ export const services = [
     id: 4,
     title: "Automotive Locksmith",
     description: "Locked out of your car or need a new key? We provide car key replacement, fob programming, duplicates, and ignition repairs for all makes and models.",
-    image: "/images/auto-locksmith.webp",
+    image: "/hero/auto-locksmith.webp",
     features: [
       "Quick On-Site Service",
       "Duplicate & Replacement Keys",

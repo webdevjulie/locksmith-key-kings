@@ -4,7 +4,7 @@ export const serviceoverview = [
     title: "House Lockout",
     description: "24/7 residential locksmith support. Quick and secure access with proper verification.",
     icon: "home",
-    image: "/images/house-lockout.webp",
+    image: "/services/house-lockout.webp",
     link: "/services",
   },
   {
@@ -12,7 +12,7 @@ export const serviceoverview = [
     title: "Car Lockout",
     description: "Rapid response automotive locksmiths. Safe unlocking for all vehicle types.",
     icon: "directions_car",
-    image: "/images/car-lockout.webp",
+    image: "/services/car-lockout.webp",
     link: "/services",
   },
   {
@@ -20,7 +20,7 @@ export const serviceoverview = [
     title: "Commercial Locksmith",
     description: "Advanced security systems for businesses. Installation, maintenance, and emergency access.",
     icon: "business",
-    image: "/images/commercial-locksmith.webp",
+    image: "/here/commercial-locksmith.webp",
     link: "/services",
   },
   {
@@ -28,7 +28,7 @@ export const serviceoverview = [
     title: "Lock Rekey",
     description: "Enhance security quickly by rekeying existing locks—ideal for lost or compromised keys.",
     icon: "vpn_key",
-    image: "/images/rekey.webp",
+    image: "/services/rekey.webp",
     link: "/services",
   },
   {
@@ -36,7 +36,7 @@ export const serviceoverview = [
     title: "Car Key Replacement",
     description: "Key cutting & programming for all makes and models. Fast, affordable replacements.",
     icon: "car_repair",
-    image: "/images/car-key-replacement.webp",
+    image: "/services/car-key-replacement.webp",
     link: "/services",
   },
   {
@@ -44,7 +44,7 @@ export const serviceoverview = [
     title: "Lock Installation",
     description: "Secure installations of advanced locking systems by certified technicians.",
     icon: "build",
-    image: "/images/lock-installation.webp",
+    image: "/services/lock-installation.webp",
     link: "/services",
   },
 ];
